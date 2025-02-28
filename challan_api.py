@@ -8,6 +8,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 app = FastAPI()
+@app.get("/")
+def home():
+    return {"message": "Welcome to the Challan API! Use /challan/{vehicle_no} to get challan details."}
 
 def get_challan_details(vehicle_no):
     options = webdriver.ChromeOptions()
